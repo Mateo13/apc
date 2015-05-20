@@ -28,7 +28,7 @@ class APCUnit:
 		""" Get the current state of an outlet. """
 		oid = self.outletCtlOID + (outlet,)
 		errorIndication, errorStatus, errorIndex, varBinds = cmdgen.CommandGenerator().getCmd(self.community, self.target, oid)
-		print varBinds
+		print(varBinds)
 		
 	def setOutletCtl(self, outlet, state):
 		""" Set an outlet. """
@@ -38,12 +38,12 @@ class APCUnit:
 		errorIndication, errorStatus, errorIndex, varBinds = cmdgen.CommandGenerator().setCmd(self.community, self.target, (oid, setting))
 		
 		#print errorIndication
-		print varBinds
+		print(varBinds)
 		
 
 if __name__ == "__main__":
 	""" We're being run as a script. """
 	a = APCUnit("10.52.190.226")
-	print a.on
+	print(a.on)
 	a.getOutletCtl(1)
 	a.setOutletCtl(1, a.reboot)
