@@ -3,6 +3,7 @@ from pysnmp.proto import rfc1902
 
 #TODO: Add method to change community data string to support different versions of SNMP.
 #TODO: Add support to set/get multiple outlets.
+#TODO: Add some error handling too.
 
 class APCUnit:
 	"""  A class that represents an APC power management unit. """
@@ -42,7 +43,7 @@ class APCUnit:
 
 if __name__ == "__main__":
 	""" We're being run as a script. """
-	a = APCUnit("10.1.2.27")
+	a = APCUnit("10.52.190.226")
 	print a.on
 	a.getOutletCtl(1)
 	a.setOutletCtl(1, a.reboot)
