@@ -1,12 +1,12 @@
 from pysnmp.entity.rfc3413.oneliner import cmdgen
 from pysnmp.proto import rfc1902
 
-#TODO: Add method to change community data string to support different versions of SNMP.
+
 #TODO: Add support to set/get multiple outlets.
 #TODO: Add some error handling too.
 
 class APCUnit:
-	"""  A class that represents an APC power management unit. """
+	"""  A class that represents an APC power management unit. It currently only supports SNMPv1. """
 	
 	# OID for the outlet Control 
 	outletCtlOID = (1,3,6,1,4,1,318,1,1,4,4,2,1,3)
